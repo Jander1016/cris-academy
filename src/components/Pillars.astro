@@ -1,0 +1,55 @@
+---
+import { BookOpen, Target, Network } from 'lucide-react';
+
+const pillars = [
+  {
+    title: "Morphological Acceleration",
+    description: "Beyond vocabulary. Using word matrices and etymology to decode technical complexity at the root level.",
+    module: "MODULE 01",
+    Icon: BookOpen
+  },
+  {
+    title: "Scaffolded Mastery",
+    description: "Pressure-free input and evidence-based frameworks to move from 'Speech Emergence' to 'Professional Influence'.",
+    module: "MODULE 02",
+    Icon: Target
+  },
+  {
+    title: "Asset-Based Growth",
+    description: "We don't fix your English; we leverage your engineering logic to accelerate your communication stack.",
+    module: "MODULE 03",
+    Icon: Network
+  }
+];
+---
+
+<section id="curriculum" class="py-24 bg-slate-50/50">
+  <div class="container mx-auto px-6">
+    <div class="mb-16">
+      <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600">The Method</span>
+      <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-4 tracking-tight">Pillars of Excellence.</h2>
+      <p class="text-slate-500 mt-6 max-w-lg text-sm leading-relaxed">
+        We bridge the gap between engineering logic and linguistic mastery using evidence-based frameworks and zero-pressure immersion.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {pillars.map(({ title, description, module, Icon }) => (
+        <div class="bg-white p-10 rounded-sm border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-sm mb-8 group-hover:bg-slate-900 group-hover:text-white transition-colors">
+            <Icon size={20} />
+          </div>
+          <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase">{module}</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 mb-4 tracking-tight">{title}</h3>
+          <p class="text-sm text-slate-500 leading-relaxed mb-6">
+            {description}
+          </p>
+          <div class="flex items-center text-xs font-bold text-slate-400 group-hover:text-blue-600 transition-colors uppercase tracking-widest cursor-pointer">
+             Learn More 
+             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

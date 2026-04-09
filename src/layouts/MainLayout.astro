@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "The Science of High-Stakes Communication for Engineers" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Cris Academy</title>
+		<meta name="description" content={description} />
+	</head>
+	<body class="selection:bg-slate-200">
+		<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+			<nav class="container mx-auto px-6 h-20 flex items-center justify-between">
+				<a href="/" class="text-xl font-bold tracking-tight text-slate-900 min-w-0 min-h-0 h-auto w-auto">
+					CRIS ACADEMY
+				</a>
+				
+				<!-- Desktop Nav -->
+				<div class="hidden md:flex items-center space-x-8">
+					<a href="#curriculum" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Curriculum</a>
+					<a href="#mentorship" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Mentorship</a>
+					<a href="#library" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Library</a>
+					<a href="/login" class="bg-slate-900 text-white px-6 py-2 rounded-sm text-sm font-semibold hover:bg-slate-800 transition-all">Sign In</a>
+				</div>
+
+				<!-- Mobile Nav (Menu Button placeholder for now) -->
+				<div class="md:hidden">
+					<button class="text-slate-900" aria-label="Menu">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+					</button>
+				</div>
+			</nav>
+		</header>
+
+		<main class="pt-20">
+			<slot />
+		</main>
+
+		<footer class="bg-white border-t border-slate-100 py-12">
+			<div class="container mx-auto px-6">
+				<div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+					<div class="mb-8 md:mb-0">
+						<span class="text-lg font-bold text-slate-900">CRIS ACADEMY</span>
+						<p class="text-sm text-slate-500 mt-2">Accredited Scholastic Institution.</p>
+					</div>
+					<div class="flex flex-wrap gap-x-8 gap-y-4 text-xs font-semibold text-slate-500">
+						<a href="/privacy" class="hover:text-slate-900 h-auto min-h-0">Privacy Policy</a>
+						<a href="/terms" class="hover:text-slate-900 h-auto min-h-0">Terms of Service</a>
+						<a href="/ethics" class="hover:text-slate-900 h-auto min-h-0">Research Ethics</a>
+					</div>
+				</div>
+				<div class="mt-12 text-[10px] text-slate-400 uppercase tracking-widest">
+					© 2026 Cris Academy. Elite Engineering Communication.
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
