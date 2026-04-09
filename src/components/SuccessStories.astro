@@ -1,0 +1,97 @@
+---
+const successStories = [
+  { 
+    id: "k7zeOkiTWXc", 
+    name: "Dominic Bayer", 
+    role: "Senior Engineering Lead", 
+    achievement: "Secured L6 role at Tier-1 Tech",
+    type: "video" 
+  },
+  { 
+    id: "DMYkMD1rI-Q", 
+    name: "Rachel Smith", 
+    role: "AI Researcher", 
+    achievement: "Mastered High-Stakes Presentations",
+    type: "video" 
+  },
+  { 
+    id: "ens6SsTyWhA", 
+    name: "Elizah Leonard", 
+    role: "Fullstack Developer", 
+    achievement: "Interview Fluidity",
+    type: "short" 
+  },
+  { 
+    id: "Y0LyT6SxXJo", 
+    name: "Taylor Lapointe", 
+    role: "Software Architect", 
+    achievement: "Executive Communication",
+    type: "short" 
+  }
+];
+---
+
+<section id="success" class="py-32 bg-slate-950 text-white overflow-hidden relative">
+  <!-- Decorative background element -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-blue-900/10)_0%,_transparent_70%)]"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20">
+      <div class="max-w-2xl">
+        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-400">The Alumni Network</span>
+        <h2 class="text-4xl md:text-6xl font-bold mt-4 tracking-tight">Voices of Excellence.</h2>
+      </div>
+      <p class="text-slate-400 max-w-sm text-sm leading-relaxed mt-6 lg:mt-0">
+        Witness the transformation of technical logic into leadership-grade communication.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <!-- Main Featured Video -->
+      {successStories.filter(s => s.type === 'video').map((story, index) => (
+        <div class={`md:col-span-6 group`}>
+          <div class="relative aspect-video rounded-sm overflow-hidden border border-white/10 bg-slate-900 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+            <iframe
+              class="w-full h-full grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
+              src={`https://www.youtube.com/embed/${story.id}?controls=1&modestbranding=1`}
+              title={story.name}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="mt-6">
+            <h3 class="text-xl font-bold">{story.name}</h3>
+            <p class="text-xs text-blue-400 font-bold uppercase tracking-widest mt-1">{story.role}</p>
+            <p class="text-sm text-slate-500 mt-2 italic">"{story.achievement}"</p>
+          </div>
+        </div>
+      ))}
+
+      <!-- Vertical Shorts Row -->
+      <div class="md:col-span-12 mt-12">
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-start">
+          {successStories.filter(s => s.type === 'short').map((story) => (
+            <div class="w-full md:w-auto flex-1 group">
+              <div class="relative mx-auto w-full max-w-[280px] aspect-[9/16] rounded-[2.5rem] border-8 border-slate-900 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-slate-800 transition-all duration-500 group-hover:-translate-y-4">
+                <iframe
+                  class="w-full h-full"
+                  src={`https://www.youtube.com/embed/${story.id}?controls=0&modestbranding=1`}
+                  title={story.name}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="mt-8 text-center">
+                <p class="font-bold text-lg">{story.name}</p>
+                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">{story.achievement}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

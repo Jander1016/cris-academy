@@ -8,7 +8,14 @@
 - **Colores:** Fondo: `#FFFFFF` | Texto: `#0F172A` | Acento: `#1E293B`.
 - **Estrategia:** Strictly Mobile-First.
 
-## 2. STACK TECNOLÓGICO
+## 2. METODOLOGÍA (Dr. Codina Method)
+- **Marco Teórico:** Five Stages of Language Acquisition (Krashen/Terrell).
+- **Herramientas Firma:** 
+    - **Word Matrices:** Para el estudio de morfología y etimología técnica.
+    - **Scaffolded Mastery:** Instrucción andamiada por datos.
+    - **Asset-Based Acceleration:** Aprovechar la lógica de ingeniería para la fluidez.
+
+## 3. STACK TECNOLÓGICO
 - **Framework:** Astro (Modo SSR con `@astrojs/node`).
 - **Styling:** Tailwind CSS.
 - **Autenticación:** Clerk (SDK oficial para Astro).
